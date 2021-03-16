@@ -1,0 +1,104 @@
+*{
+    padding:0;
+    margin:0;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@keyframes animacion{
+    from{
+        color: #D99197;
+    }
+    to{
+        color: white;
+    }
+}
+
+html{
+    background-color: #F2D8D8;
+}
+
+.titulo{
+    color:#D99197;
+    font-size: 1.5rem;
+    animation-name: animacion;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.linea{
+    border-top: 1px solid;
+    background-color: #260C0C;
+    height: 4
+    px;
+    max-width: 100%;
+    padding: 0;
+    margin: 20px;
+}
+.lista{
+    list-style:none;
+}
+.tabla{
+    margin: 3rem;
+    width: 80%;
+    justify-content: center;
+    
+}
+.tabla a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.tabla a span{
+    transition: transform 0.2s ease-out;
+}
+.tabla a span:first-child{
+    display: inline-block;
+    padding: 50px;
+}  
+.tabla a span:last-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-200%);
+}
+.tabla a:hover span:first-child {
+    transform: translateY(200%);
+}
+  
+.tabla a:hover span:last-child,
+.tabla[data-animation] a:hover span:last-child {
+    transform: none;
+}
+.tabla i{
+    color: #F2D8D8;
+}
+
+.contenedor{
+    border:2px solid #D9A9A9;
+    border-radius: 10px;
+    background-color: #D9A9A9;
+    margin: 3rem;
+    width:25%;
+    height: 250px;
+}
+
+/* ANIMACIONES */
+
+.tabla[data-animation="to-left"] a span:last-child {
+    transform: translateX(200%);
+}
+  
+.tabla[data-animation="to-left"] a:hover span:first-child{
+    transform: translateX(-200%);
+}
+
+.info{
+    color: #F2D8D8;
+}
